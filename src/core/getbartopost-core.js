@@ -11,14 +11,7 @@ class BarToPost{
             let postcodeString = getPostcodeString(mattedcode);
             return postcodeString;
     }
-}
-function getcodesObjects(){
-    return [
-        {no:'0',code:'||:::'},{no:'1',code:':::||'},{no:'2',code:'::|:|'},{no:'3',code:'::||:'},{no:'4',code:':|::|'},
-        {no:'5',code:':|:|:'},{no:'6',code:':||::'},{no:'7',code:'|:::|'},{no:'8',code:'|::|:'},{no:'9',code:'|:|::'}
-    ];
-}
-function checkBarcode(barcode){
+    checkBarcode(barcode){
     if(barcode.length === 32 || barcode.length === 52  ){
         if( barcode.charAt(0)==='|' && barcode.charAt(barcode.length-1)==='|'){
             let temp = barcode.split('').map((element)=>{
@@ -40,6 +33,14 @@ function checkBarcode(barcode){
     }
     return false;
 }
+}
+function getcodesObjects(){
+    return [
+        {no:'0',code:'||:::'},{no:'1',code:':::||'},{no:'2',code:'::|:|'},{no:'3',code:'::||:'},{no:'4',code:':|::|'},
+        {no:'5',code:':|:|:'},{no:'6',code:':||::'},{no:'7',code:'|:::|'},{no:'8',code:'|::|:'},{no:'9',code:'|:|::'}
+    ];
+}
+
 function formatBarCode(barcode){
     if(barcode !== false){
         return  barcode.substr(1,barcode.length-1);
