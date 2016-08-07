@@ -1,3 +1,25 @@
+three ways to realize this question
+1.route---command
+```
+node main.js
+```
+2.server---client
+```
+node app.js
+node client.js
+```
+3.web
+```
+node app.js
+localhost:3000/
+```
+
+
+
+
+
+
+
 * <https://en.wikipedia.org/wiki/POSTNET>
 * <https://www.cs.drexel.edu/~introcs/Fa12/assignments/HW4/index.html>
 * <http://www.jiskha.com/>

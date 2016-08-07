@@ -4,15 +4,12 @@
 const request = require('request');
 let readlineSync = require('readline-sync');
 
-
 console.log('Welcome!');
-
 
 function getInput() {
     let code = readlineSync.question('请输入code:');
     translate(code);
 }
-
 
 function translate(code) {
     const option = {

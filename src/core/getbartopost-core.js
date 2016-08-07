@@ -4,8 +4,7 @@
 let _ = require('lodash');
 class BarToPost{
     do(barcode){
-            let checkedcode = checkBarcode(barcode);
-            //console.log(checkedcode);
+            let checkedcode = this.checkBarcode(barcode);
             let formattedcode = formatBarCode(checkedcode);
             let mattedcode = matchPostcode(formattedcode,getcodesObjects());
             let postcodeString = getPostcodeString(mattedcode);
@@ -21,7 +20,7 @@ class BarToPost{
 
             if(!temp.includes(true)){
                 let codearr = barcode.substring(1,barcode.length-2);
-                let flag = _.chain(codearr).split('').chunk(5).map(item => item.join('')).map(n => _getBarcodes().includes(n)).value();
+                let flag = _.chain(codearr).split('').chunk(5).map(item => item.join('')).map(n => getcodesObjects().includes(n)).value();
                 if(flag.includes(false)){
                     return false;
                 }else{

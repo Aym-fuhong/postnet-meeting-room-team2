@@ -22,21 +22,17 @@ app.post('/translate', function (req, res) {
 
     let barcodetozipcode = new BarcodeToZipcode();
     let typeBarcode = barcodetozipcode.checkPostCode(code);
-
     let zipcodetobarcode = new ZipcodeToBarcode();
     let typeZipcode = zipcodetobarcode.checkBarcode(code);
 
     if (typeZipcode !== false) {
         res.send("转码结果是：" + zipcodetobarcode.do(code));
-
     } else if (typeBarcode !== false) {
         res.send("转码结果是：" + barcodetozipcode.do(code));
-
     }
     else {
-        res.send("您输入的结果有误，请重新输入。");
+        res.send("您的输入有误，请重新输入。。。");
     }
-
 });
 
 

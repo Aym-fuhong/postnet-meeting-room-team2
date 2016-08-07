@@ -2,9 +2,10 @@
  * Created by SONY on 2016/8/4.
  */
 let _ = require("lodash");
+
 class PostToBar {
     do(postcode) {
-        let checkedcode = checkPostCode(postcode);
+        let checkedcode = this.checkPostCode(postcode);
         let formattedcode = formatPostCode(checkedcode);
         let matchcode = matchBarcodes(formattedcode, _getBarcodes());
         let barcodeString = getBarcodeString(matchcode);
@@ -31,6 +32,7 @@ class PostToBar {
         }
     }
 }
+
 function _getBarcodes() {
     return ['||:::', ':::||', '::|:|', '::||:', ':|::|', ':|:|:', ':||::', '|:::|', '|::|:', '|:|::'];
 }
@@ -72,5 +74,4 @@ function getBarcodeString(barcodes) {
     }
     return false;
 }
-
 module.exports = PostToBar;
