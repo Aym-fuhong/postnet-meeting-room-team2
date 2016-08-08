@@ -1,3 +1,4 @@
+
 three ways to realize this question
 1.route---command
 ```
